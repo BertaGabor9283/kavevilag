@@ -1,0 +1,18 @@
+Készítő: Berta Gábor
+URL: https://bertagabor2007.github.io/beadandokavevilag/
+
+Leírás:
+Ez a weboldal a kávék világába kalauzolja a látogatót, bemutatva a különböző fajtákat és készítési módokat. Tartalmaz egy interaktív kalkulátort és receptgyűjteményt is.
+
+JavaScript kód működése (js/script.js):
+1. Mobil menü: A 'menuBtn' gombra kattintva hozzáadja/elveszi az 'open' osztályt a navigációtól.
+2. Barista Kalkulátor: A felhasználó által megadott csészeszám és kávétípus (switch elágazás) alapján kiszámolja a szükséges víz- és kávémennyiséget, valamint a koffeint.
+3. Űrlap validáció: A 'contact-form' elküldésekor ellenőrzi, hogy a név, email, üzenet, select és checkbox mezők helyesen vannak-e kitöltve. Hiba esetén alert ablakban jelez.
+
+Használt betűtípusok:
+Google Fonts: 'Playfair Display' (címsorok) és 'Roboto' (szövegtörzs).
+Behúzva a HTML <head> részében.
+
+Források:
+Icon: Flaticon (coffee-cup)
+Képek: Unsplash (ingyenes stock fotók)

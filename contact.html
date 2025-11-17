@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Berta Gábor">
+    <meta name="description" content="Lépj kapcsolatba velünk - Kávé Világa">
+    <title>Kapcsolat - Kávé Világa</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/coffee-cup.png" type="image/png">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Kávé Világa</h1>
+            </div>
+            <button class="menu-btn" id="menuBtn">☰ Menü</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Főoldal</a></li>
+                <li><a href="coffee-types.html">Kávéfajták</a></li>
+                <li><a href="brewing.html">Készítési módszerek</a></li>
+                <li><a href="recipes.html">Receptek</a></li>
+                <li><a href="contact.html" class="active">Kapcsolat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Kapcsolat</h1>
+            <p>Kérdezz bátran, szívesen válaszolunk!</p>
+        </section>
+
+        <section class="form-section">
+            <h2>Írj nekünk!</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Név *</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email cím *</label>
+                    <input type="email" id="email" name="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="coffee-type" style="font-weight: bold;">Kedvenc kávétípus *</label>
+                    <select id="coffee-type" name="coffee-type">
+                        <option value="">Válassz...</option>
+                        <option value="espresso">Espresso</option>
+                        <option value="cappuccino">Cappuccino</option>
+                        <option value="filter">Filter kávé</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label style="font-weight: bold;">Kávéőrlés preferencia</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="grind-fine" name="grind" value="fine">
+                            <label for="grind-fine">Finom</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="grind-medium" name="grind" value="medium" checked>
+                            <label for="grind-medium">Közepes</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label style="font-weight: bold;">Ízpreferenciák (min. 1 kötelező) *</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="taste-choco" name="taste" value="chocolate">
+                            <label for="taste-choco">Csokoládés</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="taste-fruity" name="taste" value="fruity">
+                            <label for="taste-fruity">Gyümölcsös</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="taste-nutty" name="taste" value="nutty">
+                            <label for="taste-nutty">Diós</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="strength-range" style="font-weight: bold;">Kávé erősség: <span id="range-value">5</span>/10</label>
+                    <input type="range" id="strength-range" name="strength" min="1" max="10" value="5">
+                </div>
+
+                <div class="form-group">
+                    <label for="message" style="font-weight: bold;">Üzenet *</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Írd ide az üzeneted..."></textarea>
+                </div>
+
+                <button type="submit">Küldés</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="copyright">
+            <p>&copy; 2025 Kávé Világa</p>
+        </div>
+        <div class="contact-info">
+            <div>📧 info@kavevilaga.hu</div>
+            <div>📞 +36 1 234 5678</div>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
