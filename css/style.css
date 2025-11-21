@@ -6,15 +6,18 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif; /* Google Font használata kötelező pont */
-    background-color: #FFF8F0; /* Világos krémszín */
+    font-family: 'Roboto', sans-serif;
+    /* Google Font használata kötelező pont */
+    background-color: #FFF8F0;
+    /* Világos krémszín */
     color: #333;
     line-height: 1.6;
 }
 
 /* --- 2. Fejléc & Menü (Flexbox) --- */
 header {
-    background-color: #5D4037; /* Kávébarna */
+    background-color: #5D4037;
+    /* Kávébarna */
     padding: 1rem;
     position: sticky;
     top: 0;
@@ -24,7 +27,8 @@ header {
 nav {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex; /* Flexbox kötelező! */
+    display: flex;
+    /* Flexbox kötelező! */
     justify-content: space-between;
     align-items: center;
 }
@@ -47,7 +51,8 @@ nav {
 }
 
 .menu-btn {
-    display: none; /* Mobilon jelenik meg */
+    display: none;
+    /* Mobilon jelenik meg */
     background: none;
     border: 1px solid white;
     color: white;
@@ -67,10 +72,13 @@ section {
     padding: 30px;
     margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Ettől néz ki profinak */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Ettől néz ki profinak */
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Playfair Display', serif;
     color: #5D4037;
     margin-bottom: 15px;
@@ -78,13 +86,16 @@ h1, h2, h3 {
 
 /* --- 4. Kártyák elrendezése (CSS Grid) --- */
 /* Ez a rész kritikus a pontszerzéshez! */
-.feature-grid, .coffee-types, .form-row {
+.feature-grid,
+.coffee-types,
+.form-row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
 }
 
-.coffee-card, .feature-card {
+.coffee-card,
+.feature-card {
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
@@ -99,7 +110,10 @@ h1, h2, h3 {
 }
 
 /* --- 5. Űrlap elemek --- */
-input, select, textarea, button {
+input,
+select,
+textarea,
+button {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -141,11 +155,14 @@ footer {
 /* Kötelező elem a maximum ponthoz! */
 @media (max-width: 768px) {
     .menu-btn {
-        display: block; /* Mobilon látható gomb */
+        display: block;
+        /* Mobilon látható gomb */
+        width: min-content;
     }
 
     .nav-menu {
-        display: none; /* Alapból rejtve */
+        display: none;
+        /* Alapból rejtve */
         flex-direction: column;
         width: 100%;
         position: absolute;
@@ -156,7 +173,8 @@ footer {
     }
 
     .nav-menu.open {
-        display: flex; /* JS kapcsolja be */
+        display: flex;
+        /* JS kapcsolja be */
     }
 
     /* Az űrlap mezők egymás alá kerülnek a grid miatt, itt nem kell külön kód */

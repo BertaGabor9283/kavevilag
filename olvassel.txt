@@ -1,5 +1,5 @@
 Készítő: Berta Gábor
-URL: https://bertagabor2007.github.io/beadandokavevilag/
+URL: https://bertagabor2007.github.io/kavevilag/
 
 Leírás:
 Ez a weboldal a kávék világába kalauzolja a látogatót, bemutatva a különböző fajtákat és készítési módokat. Tartalmaz egy interaktív kalkulátort és receptgyűjteményt is.
