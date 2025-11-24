@@ -7,7 +7,7 @@ Ez a weboldal a kávék világába kalauzolja a látogatót, bemutatva a külön
 JavaScript kód működése (js/script.js):
 1. Mobil menü: A 'menuBtn' gombra kattintva hozzáadja/elveszi az 'open' osztályt a navigációtól.
 2. Barista Kalkulátor: A felhasználó által megadott csészeszám és kávétípus (switch elágazás) alapján kiszámolja a szükséges víz- és kávémennyiséget, valamint a koffeint.
-3. Űrlap validáció: A 'contact-form' elküldésekor ellenőrzi, hogy a név, email, üzenet, select és checkbox mezők helyesen vannak-e kitöltve. Hiba esetén alert ablakban jelez.
+3. Űrlap validáció: A 'contact-form' elküldésekor ellenőrzi, hogy a név, email, üzenet, select és checkbox mezők helyesen vannak-e kitöltve. Hiba esetén a mezők alatt piros hibaüzenet jelenik meg, és a hibás mezők piros keretet kapnak. Sikeres validáció esetén az űrlap elküldésre kerül a https://httpbin.org/post címre.
 
 Használt betűtípusok:
 Google Fonts: 'Playfair Display' (címsorok) és 'Roboto' (szövegtörzs).

@@ -3,7 +3,7 @@ const menuButton = document.getElementById('menuBtn');
 const navMenu = document.getElementById('navMenu');
 
 if (menuButton) {
-    menuButton.addEventListener('click', function() {
+    menuButton.addEventListener('click', function () {
         navMenu.classList.toggle('open');
     });
 }
@@ -82,45 +82,81 @@ if (contactForm) {
     // Range slider érték kijelzése
     const rangeInput = document.getElementById('strength-range');
     const rangeValue = document.getElementById('range-value');
-    if(rangeInput) {
-        rangeInput.addEventListener('input', function() {
+    if (rangeInput) {
+        rangeInput.addEventListener('input', function () {
             rangeValue.textContent = this.value;
         });
     }
 
     // Validációs logika
-    contactForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Megállítjuk a beküldést
-        
-        let errors = [];
+    contactForm.addEventListener('submit', function (event) {
+        let isValid = true;
+
+        // 1. Töröljük az előző hibaüzeneteket és stílusokat
+        const errors = document.querySelectorAll('.error-msg');
+        errors.forEach(el => el.textContent = '');
+
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(el => el.classList.remove('input-error'));
+
+        // Elemek referenciái
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const coffeeTypeInput = document.getElementById('coffee-type');
+        const messageInput = document.getElementById('message');
+
+        // Hibaüzenet tárolók
+        const errorName = document.getElementById('error-name');
+        const errorEmail = document.getElementById('error-email');
+        const errorCoffeeType = document.getElementById('error-coffee-type');
+        const errorTaste = document.getElementById('error-taste');
+        const errorMessage = document.getElementById('error-message');
+
+        // --- VALIDÁCIÓK ---
 
         // 1. Név validáció
-        const name = document.getElementById('name').value.trim();
-        if (name.length < 2) errors.push("A név túl rövid!");
+        if (nameInput.value.trim().length < 2) {
+            errorName.textContent = "A név túl rövid!";
+            nameInput.classList.add('input-error');
+            isValid = false;
+        }
 
         // 2. Email validáció
-        const email = document.getElementById('email').value.trim();
-        if (!email.includes('@') || !email.includes('.')) errors.push("Érvénytelen email cím!");
+        const emailValue = emailInput.value.trim();
+        if (!emailValue.includes('@') || !emailValue.includes('.')) {
+            errorEmail.textContent = "Érvénytelen email cím!";
+            emailInput.classList.add('input-error');
+            isValid = false;
+        }
 
         // 3. Select validáció (Kávétípus)
-        const type = document.getElementById('coffee-type').value;
-        if (type === "") errors.push("Válassz kávétípust!");
+        if (coffeeTypeInput.value === "") {
+            errorCoffeeType.textContent = "Válassz kávétípust!";
+            coffeeTypeInput.classList.add('input-error');
+            isValid = false;
+        }
 
         // 4. Checkbox validáció (Ízvilág)
         const tastes = document.querySelectorAll('input[name="taste"]:checked');
-        if (tastes.length === 0) errors.push("Jelölj be legalább egy ízvilágot!");
+        if (tastes.length === 0) {
+            errorTaste.textContent = "Jelölj be legalább egy ízvilágot!";
+            isValid = false;
+        }
 
         // 5. Üzenet validáció
-        const message = document.getElementById('message').value.trim();
-        if (message.length < 10) errors.push("Az üzenet minimum 10 karakter legyen!");
+        if (messageInput.value.trim().length < 10) {
+            errorMessage.textContent = "Az üzenet minimum 10 karakter legyen!";
+            messageInput.classList.add('input-error');
+            isValid = false;
+        }
 
-        // Kiértékelés
-        if (errors.length > 0) {
-            alert("Hiba:\n- " + errors.join("\n- "));
+        // --- DÖNTÉS ---
+        if (!isValid) {
+            event.preventDefault(); // Megállítjuk a küldést, ha hiba van
+            console.log("Hiba az űrlapon!");
         } else {
-            alert("Sikeres küldés! Köszönjük.");
-            contactForm.reset();
-            if(rangeValue) rangeValue.textContent = '5';
+            // Ha minden OK, engedjük tovább a httpbin-re
+            console.log("Minden adat rendben, küldés...");
         }
     });
 }
