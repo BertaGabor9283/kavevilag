@@ -1,4 +1,4 @@
-// 1. Mobil menü kezelése
+
 const menuButton = document.getElementById('menuBtn');
 const navMenu = document.getElementById('navMenu');
 
@@ -8,26 +8,21 @@ if (menuButton) {
     });
 }
 
-// 2. Barista Kalkulátor (Interaktív program - 8 pont)
 const calculateButton = document.getElementById('calculate');
 if (calculateButton) {
     calculateButton.addEventListener('click', calculateCoffee);
 }
 
 function calculateCoffee() {
-    // HTML elemek lekérése
     const cups = parseInt(document.getElementById('cups').value);
     const strength = parseInt(document.getElementById('strength').value);
     const method = document.getElementById('brewing-method').value;
     const resultDiv = document.getElementById('result');
-
-    // Biztonsági ellenőrzés
     if (isNaN(cups) || cups < 1) {
         alert('Kérjük, adj meg legalább 1 csészét!');
         return;
     }
 
-    // Logika: Switch elágazás a vízigényhez
     let waterPerCup;
     let methodText;
 
@@ -53,12 +48,9 @@ function calculateCoffee() {
             methodText = "Általános";
     }
 
-    // Számítás
     const totalCoffee = cups * strength;
     const totalWater = cups * waterPerCup;
     const estimatedCaffeine = totalCoffee * 11; // kb. 11mg/g
-
-    // Eredmény kiírása
     resultDiv.style.display = 'block';
     resultDiv.innerHTML = `
         <div style="background:#FFF8F0; padding:15px; border-left:4px solid #D4AF37; margin-top:15px;">
@@ -75,11 +67,9 @@ function calculateCoffee() {
     `;
 }
 
-// 3. Űrlap Validáció (5 mezőre - 10 pont)
 const contactForm = document.getElementById('contact-form');
 
 if (contactForm) {
-    // Range slider érték kijelzése
     const rangeInput = document.getElementById('strength-range');
     const rangeValue = document.getElementById('range-value');
     if (rangeInput) {
@@ -88,40 +78,31 @@ if (contactForm) {
         });
     }
 
-    // Validációs logika
     contactForm.addEventListener('submit', function (event) {
         let isValid = true;
 
-        // 1. Töröljük az előző hibaüzeneteket és stílusokat
         const errors = document.querySelectorAll('.error-msg');
         errors.forEach(el => el.textContent = '');
 
         const inputs = document.querySelectorAll('input, select, textarea');
         inputs.forEach(el => el.classList.remove('input-error'));
 
-        // Elemek referenciái
         const nameInput = document.getElementById('name');
         const emailInput = document.getElementById('email');
         const coffeeTypeInput = document.getElementById('coffee-type');
         const messageInput = document.getElementById('message');
-
-        // Hibaüzenet tárolók
         const errorName = document.getElementById('error-name');
         const errorEmail = document.getElementById('error-email');
         const errorCoffeeType = document.getElementById('error-coffee-type');
         const errorTaste = document.getElementById('error-taste');
         const errorMessage = document.getElementById('error-message');
 
-        // --- VALIDÁCIÓK ---
-
-        // 1. Név validáció
         if (nameInput.value.trim().length < 2) {
             errorName.textContent = "A név túl rövid!";
             nameInput.classList.add('input-error');
             isValid = false;
         }
 
-        // 2. Email validáció
         const emailValue = emailInput.value.trim();
         if (!emailValue.includes('@') || !emailValue.includes('.')) {
             errorEmail.textContent = "Érvénytelen email cím!";
@@ -129,33 +110,29 @@ if (contactForm) {
             isValid = false;
         }
 
-        // 3. Select validáció (Kávétípus)
         if (coffeeTypeInput.value === "") {
             errorCoffeeType.textContent = "Válassz kávétípust!";
             coffeeTypeInput.classList.add('input-error');
             isValid = false;
         }
 
-        // 4. Checkbox validáció (Ízvilág)
         const tastes = document.querySelectorAll('input[name="taste"]:checked');
         if (tastes.length === 0) {
             errorTaste.textContent = "Jelölj be legalább egy ízvilágot!";
             isValid = false;
         }
 
-        // 5. Üzenet validáció
         if (messageInput.value.trim().length < 10) {
             errorMessage.textContent = "Az üzenet minimum 10 karakter legyen!";
             messageInput.classList.add('input-error');
             isValid = false;
         }
 
-        // --- DÖNTÉS ---
         if (!isValid) {
-            event.preventDefault(); // Megállítjuk a küldést, ha hiba van
+            event.preventDefault();
             console.log("Hiba az űrlapon!");
         } else {
-            // Ha minden OK, engedjük tovább a httpbin-re
+            console.log("Minden adat rendben, küldés...");
             console.log("Minden adat rendben, küldés...");
         }
     });

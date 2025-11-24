@@ -16,3 +16,9 @@ Behúzva a HTML <head> részében.
 Források:
 Icon: Flaticon (coffee-cup)
 Képek: Unsplash (ingyenes stock fotók)
+- Cappuccino: https://unsplash.com/photos/a-cup-of-coffee-sitting-on-top-of-a-pile-of-coffee-beans-wFvlgfyhJRE
+- Latte Macchiato: https://unsplash.com/photos/a-bottle-of-milk-with-a-straw-in-it-gCQw2XTIbHU
+- Vaníliás Latte: https://unsplash.com/photos/a-perfect-iced-latte-FRL6mxLEAtU
+- Arabica: https://unsplash.com/photos/close-up-of-coffee-beans-in-a-grinder-QbqlDeblkag
+- Robusta: https://unsplash.com/photos/a-pile-of-coffee-beans-is-shown-in-this-image-aG9pa1mQDQQ
+- Liberica: https://unsplash.com/photos/a-cup-of-coffee-sitting-on-top-of-a-pile-of-coffee-beans-8blVdQB0hoI
