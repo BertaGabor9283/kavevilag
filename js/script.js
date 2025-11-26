@@ -133,7 +133,7 @@ if (contactForm) {
             console.log("Hiba az űrlapon!");
         } else {
             console.log("Minden adat rendben, küldés...");
-            console.log("Minden adat rendben, küldés...");
+
         }
     });
 }
