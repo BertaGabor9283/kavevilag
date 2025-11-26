@@ -76,14 +76,12 @@ h3 {
 }
 
 .feature-grid,
-.coffee-types,
-.form-row {
+.coffee-types {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
 }
 
-.coffee-card,
 .feature-card {
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -143,13 +141,11 @@ footer {
 @media (max-width: 768px) {
     .menu-btn {
         display: block;
-        /* Mobilon látható gomb */
         width: min-content;
     }
 
     .nav-menu {
         display: none;
-        /* Alapból rejtve */
         flex-direction: column;
         width: 100%;
         position: absolute;
@@ -161,7 +157,6 @@ footer {
 
     .nav-menu.open {
         display: flex;
-        /* JS kapcsolja be */
     }
 
 }
@@ -197,4 +192,214 @@ footer {
     width: auto;
     margin-bottom: 0;
     margin-right: 8px;
+}
+
+
+
+.primary-btn {
+    background-color: #5D4037;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    transition: background 0.3s;
+}
+
+.primary-btn:hover {
+    background-color: #3E2723;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: #5D4037;
+    border: 2px solid #5D4037;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.secondary-btn:hover {
+    background-color: #5D4037;
+    color: white;
+}
+
+/* Modern Coffee Card Styles */
+.coffee-card {
+    padding: 0;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.coffee-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-image,
+.coffee-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.card-image img,
+.coffee-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    margin-bottom: 0;
+    transition: transform 0.5s ease;
+}
+
+.coffee-card:hover .card-image img,
+.coffee-card:hover .coffee-image img {
+    transform: scale(1.05);
+}
+
+.coffee-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.badges {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.flavor-badge {
+    background-color: #FFF8F0;
+    color: #5D4037;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid #e0d0c0;
+}
+
+/* Recipe Link Styles */
+.coffee-info h2 a {
+    color: #5D4037;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.coffee-info h2 a:hover {
+    color: #8D6E63;
+    text-decoration: underline;
+}
+
+/* Coffee Details Styles */
+.details-btn {
+    background-color: transparent;
+    color: #5D4037;
+    border: 1px solid #5D4037;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    width: auto;
+    display: inline-block;
+}
+
+.details-btn:hover {
+    background-color: #5D4037;
+    color: white;
+}
+
+.coffee-details {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    font-size: 0.95rem;
+    color: #555;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Quiz Section Styles */
+.quiz-section {
+    text-align: center;
+    background-color: #FFF8F0;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.quiz-container {
+    max-width: 600px;
+    margin: 20px auto 0;
+    min-height: 250px;
+    /* Prevent layout jump */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+@media (max-width: 480px) {
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.quiz-option-btn {
+    background-color: white;
+    border: 2px solid #5D4037;
+    color: #5D4037;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.quiz-option-btn:hover {
+    background-color: #5D4037;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.hidden {
+    display: none !important;
+}
+
+#result-coffee-name {
+    color: #D4AF37;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+#result-description {
+    margin: 20px 0;
+    font-style: italic;
 }

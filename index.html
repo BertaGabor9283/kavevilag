@@ -37,38 +37,27 @@
             <p>Fedezd fel a kávé varázslatos világát velünk</p>
         </section>
 
-        <section class="calculator-section">
-            <h2>Barista Kalkulátor</h2>
-            <p>Számold ki a tökéletes arányokat!</p>
-            <div class="calculator" style="max-width:500px; margin:0 auto;">
-                <div class="form-group">
-                    <label for="cups">Csészék száma:</label>
-                    <input type="number" id="cups" min="1" max="12" value="1">
+        <section class="quiz-section">
+            <h2>Milyen kávé illik hozzád?</h2>
+            <p>Töltsd ki gyors tesztünket, és megtudod!</p>
+
+            <div class="quiz-container" id="quiz-container">
+                <div id="quiz-question-container">
+                    <h3 id="question-text">Kérdés helye...</h3>
+                    <div class="options-grid" id="options-container">
+                        <!-- Options will be generated here -->
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="brewing-method">Készítési mód:</label>
-                    <select id="brewing-method">
-                        <option value="filter">Filter kávé (150ml)</option>
-                        <option value="espresso">Espresso (30ml)</option>
-                        <option value="french">French Press (200ml)</option>
-                        <option value="aeropress">Aeropress (220ml)</option>
-                    </select>
+                <div id="quiz-result" class="hidden">
+                    <h3>Te egy <span id="result-coffee-name">...</span> vagy!</h3>
+                    <p id="result-description">...</p>
+                    <button id="restart-quiz-btn" class="primary-btn">Újra kitöltöm</button>
                 </div>
-
-                <div class="form-group">
-                    <label for="strength">Erősség:</label>
-                    <select id="strength">
-                        <option value="7">Lágy (7g)</option>
-                        <option value="10" selected>Közepes (10g)</option>
-                        <option value="12">Erős (12g)</option>
-                    </select>
-                </div>
-
-                <button id="calculate">Kiszámol</button>
-                <div id="result" style="display:none;"></div>
             </div>
         </section>
+
+
 
         <section class="features">
             <h2>Miért szeretjük a kávét?</h2>
